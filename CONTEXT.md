@@ -6,7 +6,9 @@ The grid of boxes generated from JS at runtime (box count = life expectancy × `
 
 The active unit is read from the `data-unit` attribute on `<body>` (not from label text). The box index for any date is computed by the pure `dateToIndex(date, dob, unit)` function.
 
-On the weeks view, two sliders adjust the vertical and horizontal spacing between boxes (grid gaps), letting the user open the chart up so period bands are easier to see. The values drive CSS gap variables and persist to `localStorage` (`ROW_GAP`, `COL_GAP`).
+On the weeks view, two sliders adjust the vertical and horizontal spacing between boxes (grid gaps), letting the user open the chart up so period bands are easier to see. The values drive CSS gap variables and persist to `localStorage` (`ROW_GAP`, `COL_GAP`). An "Only show life" checkbox hides the annotation layer (events + periods) to show just the boxes; it is session-only and always starts off.
+
+The site root (`index.html`) redirects to the weeks view, which is the default.
 
 **Scope:** the Side Panel, Events, and Periods currently render on the **weeks** view only. Years and months generate their boxes and colour elapsed time from the same shared code, but do not yet show annotations (their rotated/circular boxes need bespoke band/diamond styling first). `dateToIndex` is already unit-generic, so extending is a flag flip (`ANNOTATIONS_UNIT` in `your-life.js`).
 

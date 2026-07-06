@@ -120,6 +120,19 @@ body {
   vertical-align: middle;
   width: 7em;
 }
+.view-controls {
+  text-align: center;
+  font-size: 0.9em;
+  margin: 0.25rem 0 0;
+}
+.view-controls input {
+  vertical-align: middle;
+}
+/* "Only show life" — hide the annotation layer, leaving just the boxes. */
+.annotations-hidden .box-bands,
+.annotations-hidden .event-marker {
+  display: none;
+}
 input:required:invalid.touched {
   border: 2px solid red;
 }

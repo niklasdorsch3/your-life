@@ -63,6 +63,7 @@ const lifeExpectancyEl = document.getElementById('life-expectancy');
 const livedColorEl = document.getElementById('lived-color');
 const rowGapEl = document.getElementById('row-gap');
 const colGapEl = document.getElementById('col-gap');
+const hideAnnotationsEl = document.getElementById('hide-annotations');
 const yMarkersEl = document.querySelector('.weeks--y-markers');
 
 // Side Panel (present on the weeks view only, for now).
@@ -626,6 +627,14 @@ const init = () => {
     colGapEl.value = colGap;
     rowGapEl.addEventListener('input', handleRowGapChange);
     colGapEl.addEventListener('input', handleColGapChange);
+  }
+
+  if (hideAnnotationsEl) {
+    // Not persisted — always starts off so events/periods are visible on load.
+    hideAnnotationsEl.checked = false;
+    hideAnnotationsEl.addEventListener('change', () => {
+      document.body.classList.toggle('annotations-hidden', hideAnnotationsEl.checked);
+    });
   }
 
   unitboxEl.addEventListener('change', (e) => {

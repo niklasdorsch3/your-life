@@ -4,13 +4,17 @@
   <meta charset="UTF-8">
   <title>Your Life</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Weeks is the primary view — open it by default. -->
+  <meta http-equiv="refresh" content="0; url=weeks.html">
   <link rel="stylesheet" href="your-life.css">
+  <script>window.location.replace('weeks.html');</script>
 </head>
 <body>
+  <!-- Fallback links if the redirect doesn't fire. -->
   <ul class="index">
+    <li><a href="weeks.html">Your life in Weeks</a></li>
     <li><a href="years.html">Your life in Years</a></li>
     <li><a href="months.html">Your life in Months</a></li>
-    <li><a href="weeks.html">Your life in Weeks</a></li>
   </ul>
 </body>
 </html>
